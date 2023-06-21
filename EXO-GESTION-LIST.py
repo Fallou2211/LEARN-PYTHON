@@ -16,16 +16,19 @@ OPTION: AFICHER TJRS L'OPTION CHOISIT PAR USER
     5-QUITTER
         A BIENOT !
 """
+import sys
+
 liste = []
 while True :
-    print("Choisissez parmis les options suivantes : ")
-    print("1-AJOUTER UN ELEMENT DE DANS LA LISTE")
-    print("2-RETIER UN ELEMENT DANS LA LISTE")
-    print("3-AFFICHER LA LISTE")
-    print("4-VIDER LA LISTE")
-    print("5-QUITTER")
+    affichage = """Choisissez parmis les options suivantes :
+    1-AJOUTER UN ELEMENT DE DANS LA LISTE
+    2-RETIER UN ELEMENT DANS LA LISTE
+    3-AFFICHER LA LISTE
+    4-VIDER LA LISTE
+    5-QUITTER
+    Votre choix -->  """
 
-    option = input("Votre choix --> ")
+    option = input(affichage)
 
     if option == "1" or option == "2":
 
@@ -52,17 +55,15 @@ while True :
             print("la liste est vide")
         else :
             if option == "3":
-                i = 1
-                for element in liste :
+                for i, element in enumerate(liste, 1) :
                     print(f"{i}. {element}")
-                    i+= 1
             else:
                 liste.clear()
                 print("la liste a bien ete vider de son contenue")
 
     elif option == "5":
         print("A bientot !")
-        break
+        sys.exit()
 
     else:
         print("VOTRE CHOIX N'EXISTE PAS RECHOISISSEZ !")
