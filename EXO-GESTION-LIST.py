@@ -19,7 +19,7 @@ OPTION: AFICHER TJRS L'OPTION CHOISIT PAR USER
 import sys
 
 liste = []
-while True :
+while True:
     affichage = """Choisissez parmis les options suivantes :
     1-AJOUTER UN ELEMENT DE DANS LA LISTE
     2-RETIER UN ELEMENT DANS LA LISTE
@@ -35,27 +35,27 @@ while True :
         element = input("entrer le nom de l'element : ")
         element = element.capitalize()
 
-        if element in liste :
-            if  option =="1":
+        if element in liste:
+            if option == "1":
                 print(f"l'element {element} exite deja ")
-                
+
             else:
                 liste.remove(element)
                 print(f"l'element {element} a bien ete supprimer de la liste")
         else:
             if option == "1":
                 liste.append(element)
-                print(f"l'element {element} a bien ete ajouter") 
+                print(f"l'element {element} a bien ete ajouter")
             else:
                 print(f"l'element {element} n'existe pas")
-                
+
 
     elif option == "3" or option == "4":
         if len(liste) == 0:
             print("la liste est vide")
-        else :
+        else:
             if option == "3":
-                for i, element in enumerate(liste, 1) :
+                for i, element in enumerate(liste, 1):
                     print(f"{i}. {element}")
             else:
                 liste.clear()
